@@ -1,21 +1,10 @@
-import { Post } from "./Post";
+import { Header } from "./components/Header";
 
 export function App() {
 
   return (
     <div>
-      <Post
-        author="John Doe"
-        content="lorem ipsum dolor sit amet "
-      />
-      <Post
-        author="John Doe"
-        content="lorem ipsum dolor sit amet "
-      />
-      <Post
-        author="John Doe"
-        content="lorem ipsum dolor sit amet "
-      />
+      <Header />
     </div>
   )
 }
