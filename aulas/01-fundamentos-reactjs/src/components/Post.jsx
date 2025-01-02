@@ -11,15 +11,15 @@ export function Post({ author, publishedAt, content }) {
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
     });
-    
+
     const publishedRelativeToNow = formatDistanceToNow(publishedAt, {
         locale: ptBR,
         addSuffix: true
     })
-    
+
     const [comments, setComments] = useState(["Muito bacana!"]);
     const [newCommentText, setNewCommentText] = useState('');
-    
+
     function handleCreateNewComment(event) {
         event.preventDefault();
 
@@ -29,6 +29,14 @@ export function Post({ author, publishedAt, content }) {
 
     function handleNewCommentChange(event) {
         setNewCommentText(event.target.value);
+    }
+
+    function onDeleteComment(commentToDelete) {
+        const commentsWithoutDeletedOne = comments.filter(
+            comment => comment !== commentToDelete
+        );
+
+        setComments(commentsWithoutDeletedOne);
     }
 
     return (
@@ -63,7 +71,7 @@ export function Post({ author, publishedAt, content }) {
             <form
                 onSubmit={handleCreateNewComment}
                 className={styles.commentForm}
-                
+
             >
                 <strong>Deixe seu feedback</strong>
 
@@ -80,7 +88,13 @@ export function Post({ author, publishedAt, content }) {
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment key={comment} content={comment} />
+                    return (
+                        <Comment
+                            key={comment}
+                            content={comment}
+                            onDeleteComment={onDeleteComment}
+                        />
+                    )
                 })}
             </div>
         </article>
