@@ -20,7 +20,7 @@ const newCycleFormValidationSchema = zod.object({
     task: zod.string().min(1, 'Informe a tarefa'),
     minutesAmount: zod
         .number()
-        .min(5, 'O cliclo precisa ser no mínimo de 5 minutos')
+        .min(1, 'O cliclo precisa ser no mínimo de 5 minutos')
         .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
 })
 
@@ -32,6 +32,7 @@ interface Cycle {
     minutesAmount: number;
     startDate: Date;
     interruptedDate?: Date;
+    finishedDate?: Date;
 }
 
 export function Home() {
@@ -66,10 +67,10 @@ export function Home() {
     }
 
     function handleInterruptCycle() {
-        
-        setCycles(
-            cycles.map((cycle) => {
-                if (cycle.id === activeCycleId){
+
+        setCycles(state =>
+            state.map((cycle) => {
+                if (cycle.id === activeCycleId) {
                     return { ...cycle, interruptedDate: new Date() }
                 }
 
@@ -94,14 +95,33 @@ export function Home() {
 
         if (activeCycle) {
             interval = setInterval(() => {
-                setAmountSecondsPassed(differenceInSeconds(new Date(), activeCycle.startDate));
+                const secondsDifference = differenceInSeconds(
+                    new Date(),
+                    activeCycle.startDate
+                );
+
+                if (secondsDifference >= totalSeconds) {
+                    setCycles(state => state.map((cycle) => {
+                        if (cycle.id === activeCycleId) {
+                            return { ...cycle, finishedDate: new Date() }
+                        }
+
+                        return cycle;
+                    }));
+
+                    setAmountSecondsPassed(totalSeconds);
+                    clearInterval(interval);
+                } else {
+                    setAmountSecondsPassed(secondsDifference);
+                }
+
             }, 1000);
         }
 
         return () => {
             clearInterval(interval);
         }
-    }, [activeCycle]);
+    }, [activeCycle, totalSeconds, activeCycle]);
 
     useEffect(() => {
         document.title = `${minutes}:${seconds}`
@@ -133,8 +153,8 @@ export function Home() {
                         id="minutesAmount"
                         type="number"
                         placeholder="00"
-                        step={5}
-                        min={5}
+                        step={1}
+                        min={1}
                         max={60}
                         disabled={!!activeCycle}
                         {...register('minutesAmount', { valueAsNumber: true })}
