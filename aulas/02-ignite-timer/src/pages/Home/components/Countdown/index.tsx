@@ -7,7 +7,7 @@ import {
     Separator
 } from './styles.ts'
 import { differenceInSeconds } from 'date-fns';
-import { CyclesContext } from '../../index.tsx';
+import { CyclesContext } from '../../../../contexts/CyclesContext.tsx';
 
 export function Countdown() {
     const {
