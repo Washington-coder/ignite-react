@@ -39,29 +39,41 @@ interface CyclesState {
 export function CyclesContextProvider({ children }: CyclesContextProviderProps) {
 
     const [cyclesState, dispatch] = useReducer((state: CyclesState, action) => {
-        if (action.type === 'ADD_NEW_CYCLE') {
-            return {
-                ...state,
-                cycles: [...state.cycles, action.payload.newCycle],
-                activeCycleId: action.payload.newCycle.id
-            }
-        }
 
-        if (action.type === 'INTERRUPT_CURRENT_CYCLE') {
-            return {
-                ...state,
-                cycles: state.cycles.map((cycle) => {
-                    if (cycle.id === state.activeCycleId) {
-                        return { ...cycle, interruptedDate: new Date() }
-                    }
-    
-                    return cycle;
-                }),
-                activeCycleId: null
-            }
-        }
+        switch (action.type) {
+            case 'ADD_NEW_CYCLE':
+                return {
+                    ...state,
+                    cycles: [...state.cycles, action.payload.newCycle],
+                    activeCycleId: action.payload.newCycle.id
+                }
+            case 'INTERRUPT_CURRENT_CYCLE':
+                return {
+                    ...state,
+                    cycles: state.cycles.map((cycle) => {
+                        if (cycle.id === state.activeCycleId) {
+                            return { ...cycle, interruptedDate: new Date() }
+                        }
 
-        return state;
+                        return cycle;
+                    }),
+                    activeCycleId: null
+                }
+            case 'MARK_CURRENT_CYCLE_AS_FINISHED':
+                return {
+                    ...state,
+                    cycles: state.cycles.map((cycle) => {
+                        if (cycle.id === state.activeCycleId) {
+                            return { ...cycle, finishedDate: new Date() }
+                        }
+
+                        return cycle;
+                    }),
+                    activeCycleId: null
+                }
+            default:
+                return state
+        }
     }, {
         cycles: [],
         activeCycleId: null
@@ -84,14 +96,6 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
                 activeCycleId
             }
         });
-
-        // setCycles(state => state.map((cycle) => {
-        //     if (cycle.id === activeCycleId) {
-        //         return { ...cycle, finishedDate: new Date() }
-        //     }
-
-        //     return cycle;
-        // }));
     }
 
     function createNewCycle(data: CreateCycleData) {
@@ -111,7 +115,6 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
             }
         });
 
-        // setCycles((state) => [...state, newCycle]);
         setAmountSecondsPassed(0);
     }
 
