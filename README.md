@@ -81,4 +81,4 @@ Se quiser acompanhar mais sobre minha jornada ou trocar ideias, você pode me en
 
 ---
 
-✨ _"Nunca considere o estudo como uma obrigação, mas como uma oportunidade de mergulhar no belo mundo do saber."_  
+✨ _"Nunca considere o estudo como uma obrigação, mas como uma oportunidade de mergulhar no belo mundo do saber."_  - Albert Einstein
