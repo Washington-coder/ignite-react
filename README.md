@@ -86,6 +86,7 @@ Aqui estão os projetos que estou desenvolvendo ao longo do bootcamp:
 
 **Imagens**
 
+![Ignite Timer](./projects-images/ignite_timer-ezgif.com-video-to-gif-converter.gif)
 ![Ignite Timer](./projects-images/ignite-timer.png)
 ![Ignite Timer](./projects-images/ignite-timer2.png)
 
