@@ -69,6 +69,26 @@ Aqui estão os projetos que estou desenvolvendo ao longo do bootcamp:
 ![Ignite Feed](./projects-images/example1.png)
 
 
+### 📝 **Projeto 2: Ignite Timer**
+**Descrição**: Esse projeto é sobre um cronômetro onde você pode cadastrar atividades que serão realizadas no tempo estipulado. Você também pode verificar seu histórico de atividades realizadas bem como seu status.
+
+**Tecnologias**:
+- ✅ React Hook Form
+- ✅ Date FNS
+- ✅ Immer
+- ✅ React Router Dom
+- ✅ Styled Components
+- ✅ Zod
+- ✅ ESlint
+- ✅ TypeScript
+- ✅ Cotexts
+- ✅ Reducers
+
+**Imagens**
+
+![Ignite Timer](./projects-images/ignite-timer.png)
+![Ignite Timer](./projects-images/ignite-timer2.png)
+
 _Sinta-se à vontade para explorar as pastas de cada projeto para mais detalhes!_  
 
 ## 📬 Contato  
