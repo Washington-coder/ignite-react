@@ -55,6 +55,22 @@
       "type": "income",
       "createdAt": "2025-02-19T22:23:34.864Z",
       "id": 7
+    },
+    {
+      "category": "Venda",
+      "description": "lala 2",
+      "price": 12,
+      "type": "income",
+      "createdAt": "2025-02-20T20:02:20.553Z",
+      "id": 8
+    },
+    {
+      "category": "Venda",
+      "description": "Nova transação 6",
+      "price": 20,
+      "type": "income",
+      "createdAt": "2025-02-20T20:15:32.484Z",
+      "id": 9
     }
   ]
 }

@@ -90,6 +90,32 @@ Aqui estão os projetos que estou desenvolvendo ao longo do bootcamp:
 ![Ignite Timer](./projects-images/ignite-timer.png)
 ![Ignite Timer](./projects-images/ignite-timer2.png)
 
+### 📝 **Projeto 2: DT Money**
+**Descrição**: Projeto que tem como finalidade a organização financeira que possibilita cadastrar entradas e saídas de um usuário. Tem como funcionalidades principais: Calcular o total o saldo total do usuário, cadastrar uma nova transação com preço, categoria, nome etc e filtrar a lista de transações.
+
+**Tecnologias**:
+- ✅ React Hook Form
+- ✅ Date FNS
+- ✅ Immer
+- ✅ React Router Dom
+- ✅ Styled Components
+- ✅ Zod
+- ✅ ESlint
+- ✅ TypeScript
+- ✅ Cotexts
+- ✅ Reducers
+- ✅ RadixUI
+- ✅ Json Server
+- ✅ Use Context Selector
+- ✅ useMemo
+- ✅ useCallback
+
+**Imagens**
+
+![Ignite Timer](./projects-images/dt_money1.png)
+![Ignite Timer](./projects-images/dt_money2.png)
+![Ignite Timer](./projects-images/ignite-timer2.png)
+
 _Sinta-se à vontade para explorar as pastas de cada projeto para mais detalhes!_  
 
 ## 📬 Contato  
