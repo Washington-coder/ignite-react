@@ -91,7 +91,7 @@ Aqui estão os projetos que estou desenvolvendo ao longo do bootcamp:
 ![Ignite Timer](./projects-images/ignite-timer2.png)
 
 ### 📝 **Projeto 2: DT Money**
-**Descrição**: Projeto que tem como finalidade a organização financeira que possibilita cadastrar entradas e saídas de um usuário. Tem como funcionalidades principais: Calcular o total o saldo total do usuário, cadastrar uma nova transação com preço, categoria, nome etc e filtrar a lista de transações.
+**Descrição**: Este projeto tem como objetivo facilitar a organização financeira do usuário, permitindo o registro e o acompanhamento de suas receitas e despesas. As principais funcionalidades incluem: cálculo automático do saldo total, cadastro de novas transações com detalhes como valor, categoria e descrição, além de um sistema de filtragem para visualizar transações de forma mais eficiente.
 
 **Tecnologias**:
 - ✅ React Hook Form
@@ -114,7 +114,7 @@ Aqui estão os projetos que estou desenvolvendo ao longo do bootcamp:
 
 ![Ignite Timer](./projects-images/dt_money1.png)
 ![Ignite Timer](./projects-images/dt_money2.png)
-![Ignite Timer](./projects-images/ignite-timer2.png)
+![Ignite Timer](./projects-images/dt_money_gif.gif)
 
 _Sinta-se à vontade para explorar as pastas de cada projeto para mais detalhes!_  
 
